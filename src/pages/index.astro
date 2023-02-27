@@ -3,79 +3,120 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Fastlife - Inicio">
+	<div class="hero">
+		<img class="banner" src="../../public/banner.jpg" alt="banner">
+		<div class="bienvenidos">
+			<h1>Bienvenidos a FastLife</h1>
+			<p>Tenemos pasión por la buena ropa y traemos todo de calidad a precios accesibles. Nos dedicamos a esto hace más de 2 años y tenemos historial en el rubro.</p>
+			<a href="#">Ver catalogo</a>
+		</div>
+		<div class="logo-banner">
+			<img class="logito" src="../../public/logo3.png" alt="">
+		</div>
+	</div>
+
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<section class="seccion">
+			<h4 class="titulo">Productos <i class="fa-solid fa-shop"></i></h4>
+			<div class="container-productos">
+				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera AFA" body="https://assets.adidas.com/images/w_600,f_auto,q_auto/72bb018635354b93a5e3af33011dfa70_9366/Campera_Argentina_Tiro_23_All-Weather_Azul_HF3922_01_laydown.jpg"/>
+
+				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera Adidas" body="https://woker.vtexassets.com/arquivos/ids/288674/6HC2076-000-1.jpg?v=637934134671070000"/>
+
+				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Rompeviento Adidas" body="https://sporting.vtexassets.com/arquivos/ids/548888/6HG5860-000-1.jpg?v=637916735594500000"/>
+
+				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera Nike" body="https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/B/V/BV4446-010_0.jpg"/>
+
+				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Nike Swoosh" body="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LCH_U0EiHl10rEUiLf-JzFCSHLjg7HCLrMRsFEtp--MsMgB0BGY4_ZqOJUcR1gmeeU4&usqp=CAU"/>
+
+
+			</div>
+		</section>
+
+		<section class="seccion">
+			<h4 class="titulo">Sobre nosotros <i class="fa-regular fa-face-grin-stars"></i></h4>
+		</section>
+
+		<section class="seccion">
+			<h4 class="titulo">Contacto <i class="fa-solid fa-phone-flip"></i></h4>
+		</section>
+		
 	</main>
 </Layout>
 
 <style>
 	main {
+		width: 80%;
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
+	.banner{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: brightness(30%);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
+	.hero{
+		min-height: 400px;
+		height: 80vh;
+		max-height: 700px;
+		position: relative;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		align-items: center
+	}
+	.logito{
+		height: 330px;
+		/* position: absolute; */
+	}
+	.bienvenidos{
+		color: #fff;
+		width: 90%;
+		text-align: center;
+	}
+	.bienvenidos h1{
+		font-size: 2.5em;
+		margin-bottom: 10px;
+	}
+	.bienvenidos p{
+		font-size: .9em;
+		margin-bottom: 20px;
+		color: #c5c5c5;
+	}
+	.bienvenidos a{
+		text-decoration: none;
+		background-color: #ff7300;
+		color: #fff700;
+		padding: 5px 10px;
+		border-radius: 10px;
+		font-size: 1.5em;
+		transition: 300ms;
+	}
+	.bienvenidos a:hover{
+		color: #ffbb00;
+		background: #984f00;
+		transition: 300ms;
+	}
+	.titulo{
+		text-align: center;
+		font-size: 2em;
+		padding: 15px;
+	}
+	.container-productos{
+		background-color: #dfdfdf;
+		padding: 20px;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 15px;
+		width: 60%;
+		margin: auto;
 	}
 </style>
