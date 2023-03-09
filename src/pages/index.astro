@@ -6,46 +6,78 @@ import Card from '../components/Card.astro';
 <Layout title="Fastlife - Inicio">
 	<div class="hero">
 		<img class="banner" src="../../public/banner.jpg" alt="banner">
-		<div class="bienvenidos">
-			<h1>Bienvenidos a FastLife</h1>
-			<p>Tenemos pasión por la buena ropa y traemos todo de calidad a precios accesibles. Nos dedicamos a esto hace más de 2 años y tenemos historial en el rubro.</p>
-			<a href="#">Ver catalogo</a>
-		</div>
-		<div class="logo-banner">
-			<img class="logito" src="../../public/logo3.png" alt="">
+		<div class="container-info">
+			<div class="bienvenidos">
+				<h1>Bienvenidos a <span class="fastlife">FastLife</span></h1>
+				<p>Somos apasionados por la ropa, conseguimos ropa deportiva de todo tipo con gran calidad a precios accesibles.</p>
+				<a href="#">Ver catálogo</a>
+			</div>
+			<div class="logo-banner">
+				<img class="logito" src="../../public/logo3.png" alt="">
+			</div>
 		</div>
 	</div>
 
 	<main>
-		<section class="seccion">
-			<h4 class="titulo">Productos <i class="fa-solid fa-shop"></i></h4>
+		<section class="seccion-products">
+			<h4 class="titulo">Productos</h4>
 			<div class="container-productos">
-				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera AFA" body="https://assets.adidas.com/images/w_600,f_auto,q_auto/72bb018635354b93a5e3af33011dfa70_9366/Campera_Argentina_Tiro_23_All-Weather_Azul_HF3922_01_laydown.jpg"/>
+				<Card 
+				href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" 
+				title="Campera AFA" 
+				image="https://assets.adidas.com/images/w_600,f_auto,q_auto/72bb018635354b93a5e3af33011dfa70_9366/Campera_Argentina_Tiro_23_All-Weather_Azul_HF3922_01_laydown.jpg"
+				talle="S"/>
 
-				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera Adidas" body="https://woker.vtexassets.com/arquivos/ids/288674/6HC2076-000-1.jpg?v=637934134671070000"/>
+				<Card 
+				href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" 
+				title="Campera Adidas" 
+				image="https://woker.vtexassets.com/arquivos/ids/288674/6HC2076-000-1.jpg?v=637934134671070000"
+				talle="M"/>
 
-				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Rompeviento Adidas" body="https://sporting.vtexassets.com/arquivos/ids/548888/6HG5860-000-1.jpg?v=637916735594500000"/>
+				<Card 
+				href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" 
+				title="Rompeviento Adidas" 
+				image="https://sporting.vtexassets.com/arquivos/ids/548888/6HG5860-000-1.jpg?v=637916735594500000"
+				talle="L"/>
 
-				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Campera Nike" body="https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/B/V/BV4446-010_0.jpg"/>
+				<Card 
+				href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" 
+				title="Campera Nike" 
+				image="https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/B/V/BV4446-010_0.jpg"
+				talle="M"/>
 
-				<Card href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" title="Nike Swoosh" body="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LCH_U0EiHl10rEUiLf-JzFCSHLjg7HCLrMRsFEtp--MsMgB0BGY4_ZqOJUcR1gmeeU4&usqp=CAU"/>
+				<Card 
+				href="https://www.adidas.com.ar/campera-argentina-tiro-23-all-weather/HF3922.html" 
+				title="Nike Swoosh" 
+				image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LCH_U0EiHl10rEUiLf-JzFCSHLjg7HCLrMRsFEtp--MsMgB0BGY4_ZqOJUcR1gmeeU4&usqp=CAU"
+				talle="XL"/>
 
+				<a class="btn-catalogo-productos" href="/productos"><span>Te invitamos a ver el catalogo de productos</span><i class="fa-solid fa-circle-arrow-right"></i></a>
 
 			</div>
 		</section>
 
 		<section class="seccion">
-			<h4 class="titulo">Sobre nosotros <i class="fa-regular fa-face-grin-stars"></i></h4>
+			<h4 class="titulo">Sobre nosotros</h4>
+			<div class="container-sobrenos">
+				<Carrusel/>
+			</div>
 		</section>
 
 		<section class="seccion">
-			<h4 class="titulo">Contacto <i class="fa-solid fa-phone-flip"></i></h4>
+			<h4 class="titulo">Contacto</h4>
 		</section>
 		
 	</main>
 </Layout>
 
 <style>
+	*{
+		font-family: 'Sanchez', serif;
+	}
+	body{
+		background-color: #e6e6e6;
+	}
 	main {
 		width: 80%;
 		margin: auto;
@@ -59,33 +91,49 @@ import Card from '../components/Card.astro';
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: -1;
 	}
 	.hero{
 		min-height: 400px;
 		height: 80vh;
 		max-height: 700px;
 		position: relative;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-items: center;
-		align-items: center
+		/* display: grid; */
+		/* grid-template-columns: 1fr 1fr; */
+		/* justify-items: center; */
+		/* align-items: center */
+	}
+	.container-info{
+		display: flex;
+		width: 60%;
+		height: 100%;
+		gap: 20px;
+		/* justify-content: center; */
+		margin: auto;
+		align-items: center;
 	}
 	.logito{
-		height: 330px;
+		height: 370px;
 		/* position: absolute; */
+	}
+	.logo-banner{
+		z-index: 1;
 	}
 	.bienvenidos{
 		color: #fff;
 		width: 90%;
 		text-align: center;
+		z-index: 1;
+
+	}
+	.fastlife{
+		font-family: 'Kumar One Outline', cursive;
 	}
 	.bienvenidos h1{
-		font-size: 2.5em;
+		font-size: 3em;
 		margin-bottom: 10px;
 	}
 	.bienvenidos p{
-		font-size: .9em;
+		font-size: 1.1em;
 		margin-bottom: 20px;
 		color: #c5c5c5;
 	}
@@ -93,9 +141,9 @@ import Card from '../components/Card.astro';
 		text-decoration: none;
 		background-color: #ff7300;
 		color: #fff700;
-		padding: 5px 10px;
+		padding: 6px 15px;
 		border-radius: 10px;
-		font-size: 1.5em;
+		font-size: 2em;
 		transition: 300ms;
 	}
 	.bienvenidos a:hover{
@@ -106,17 +154,56 @@ import Card from '../components/Card.astro';
 	.titulo{
 		text-align: center;
 		font-size: 2em;
-		padding: 15px;
+		padding: 30px 0px;
+		font-family: 'Kumar One Outline', cursive;
 	}
 	.container-productos{
-		background-color: #dfdfdf;
+		background: rgb(71,71,71);
+		background: radial-gradient(circle, rgba(71,71,71,1) 40%, rgba(28,28,28,1) 100%);
 		padding: 20px;
 		border-radius: 10px;
 		display: flex;
+		flex-grow: 3;
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 15px;
 		width: 60%;
 		margin: auto;
+
+		box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.5);
 	}
+	.btn-catalogo-productos{
+		width: 196px;
+		height: 220px;
+		/* background: rgb(255,189,0); */
+		background: radial-gradient(circle, rgba(255,189,0,1) 40%, rgba(255,72,0,1) 100%);
+		border-radius: 20px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 10px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #772000;
+		padding: 12px;
+		scale: 1;
+		transition: scale 500ms ease;
+	}
+	.btn-catalogo-productos:hover{
+		scale: 1.05;
+		transition: scale 500ms ease;
+	}
+	.btn-catalogo-productos i{
+		font-size: 2em;
+	}
+	/* .seccion-products{
+		background-image: url(https://cdn.pixabay.com/photo/2016/03/15/02/42/floor-1256804__480.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 50px;
+	} */
 </style>

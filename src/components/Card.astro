@@ -1,27 +1,37 @@
 ---
 export interface Props {
 	title: string;
-	body: string;
+	image: string;
 	href: string;
+	talle: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, image, talle } = Astro.props;
 ---
 
 	<a class="producto" href={href}>
 		<h5 class="titulo-producto">{title}</h5>
 		<div class="container-img">
-			<img class="imagen-producto" src={body} alt="producto">
+			<img class="imagen-producto" src={image} alt="producto">
+			<span class="talle">{talle}</span>
 		</div>
 	</a>
+	
 <style>
 	.producto{
 		text-decoration: none;
-		color: #343434;
+		color: #000000a0;
 		display: inline-block;
-		background-color: #bfbfbf;
-		padding: 10px;
+		background: rgb(255,189,0);
+		background: radial-gradient(circle, rgba(255,189,0,1) 40%, rgba(255,72,0,1) 100%);
+		padding: 7px 13px;
 		border-radius: 20px;
+		scale: 1;
+		transition: scale 500ms ease;
+	}
+	.producto:hover{
+		scale: 1.05;
+		transition: scale 500ms ease;
 	}
 	.imagen-producto{
 		width: 100%;
@@ -31,11 +41,22 @@ const { href, title, body } = Astro.props;
 	}
 	.titulo-producto{
 		text-align: center;
-		font-size: 1.15em;
+		font-size: 1.05em;
 		margin-bottom: 10px;
 	}
 	.container-img{
 		width: 170px;
 		margin: auto;
+		position: relative;
+	}
+	.talle{
+		position: absolute;
+		bottom: -5px;
+		right: -10px;
+		background-color: rgb(255,189,0);
+		color: rgba(0, 0, 0, 0.746);
+		padding: 3px 6px;
+		border-radius: 50%;
+		font-weight: bold;
 	}
 </style>
